@@ -9,16 +9,14 @@ namespace DarkFSM
     /// </summary>
     public abstract class FSMController : MonoBehaviour
     {
+        // 所有状态 状态缓存
+        private Dictionary<string, StateBase> states = new Dictionary<string, StateBase>();
+
+        private StateBase state; // 当前状态
         /// <summary>
         /// 当前状态
         /// </summary>
-        protected StateBase state;
-
-        /// <summary>
-        /// 所有状态
-        /// 状态缓存
-        /// </summary>
-        private Dictionary<string, StateBase> states = new Dictionary<string, StateBase>();
+        public StateBase State { get => state; }
 
         /// <summary>
         /// 改变状态

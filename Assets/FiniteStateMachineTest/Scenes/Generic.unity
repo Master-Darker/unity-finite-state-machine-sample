@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 1096608255}
   - component: {fileID: 1096608254}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: Land
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -806,7 +806,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0b968a1e90fd24c4686fa53ac6e6ee0a, type: 2}
+  - {fileID: 2100000, guid: 8b2c76023cd5d4b41b0bd676a811aab1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1107,10 +1107,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1703284918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5addaaadcba66554099ed41687a7d9a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 35663c49a468c9444865305dcae08362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 2051606307}
+  fsm: {fileID: 2051606307}
   buttonAutomatic: {fileID: 89532374}
   buttonManual: {fileID: 96074008}
 --- !u!1 &1835801689
@@ -1252,7 +1252,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2051606305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6db0e1c0a2880e4baadca571f563c6f, type: 3}
+  m_Script: {fileID: 11500000, guid: 60f67e85341d77942a1a6f8975cb81a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   autoPoints:

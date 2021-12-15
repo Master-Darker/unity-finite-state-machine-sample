@@ -1,36 +1,38 @@
-﻿using System;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-namespace DarkFSM
+namespace DarkFSM.Generic
 {
     /// <summary>
-    /// 状态基类
+    /// 泛型状态类
     /// </summary>
-    public abstract class StateBase
+    /// <typeparam name="T">具体状态类</typeparam>
+    public abstract class State<T> where T : Machine<T>
     {
-        private Enum stateType; // 状态类型
+        private T owner; // 所属状态机
         /// <summary>
-        /// 状态类型
+        /// 所属状态机
         /// </summary>
-        public Enum StateType { get => stateType; protected set => stateType = value; }
+        public T Owner { get => owner; }
 
         /// <summary>
         /// 状态初始化
-        /// 仅在首次实例化时调用
         /// </summary>
-        /// <param name="stateType">状态类型</param>
-        /// <param name="controller">所属状态机</param>
-        public abstract void Init(Enum stateType, FSMController controller);
+        /// <param name="machine">所属状态机</param>
+        public void Init(T machine)
+        {
+            owner = machine;
+        }
 
         /// <summary>
         /// 进入状态
         /// </summary>
         public abstract void OnEnter();
-
         /// <summary>
         /// 退出状态
         /// </summary>
         public abstract void OnExit();
-
         /// <summary>
         /// 状态运行中
         /// </summary>
