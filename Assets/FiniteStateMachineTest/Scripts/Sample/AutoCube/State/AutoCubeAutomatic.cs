@@ -13,7 +13,7 @@ public class AutoCubeAutomatic : StateBase
 
     public override void Init(Enum stateType, FSMController controller)
     {
-        this.stateType = stateType;
+        StateType = stateType;
         this.controller = controller as AutoCubeController;
     }
 

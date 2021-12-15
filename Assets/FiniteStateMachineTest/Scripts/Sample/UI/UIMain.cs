@@ -17,6 +17,9 @@ public class UIMain : MonoBehaviour
         buttonAutomatic.onClick.Invoke();
     }
 
+    /// <summary>
+    /// 切换自动模式
+    /// </summary>
     private void SwitchAutomatic()
     {
         controller.ChangeState(AutoCubeStateType.AutoCubeAutomatic);
@@ -24,6 +27,9 @@ public class UIMain : MonoBehaviour
         buttonManual.interactable = true;
     }
 
+    /// <summary>
+    /// 切换手动模式
+    /// </summary>
     private void SwitchManual()
     {
         controller.ChangeState(AutoCubeStateType.AutoCubeManual);
