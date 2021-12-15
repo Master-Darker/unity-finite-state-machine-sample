@@ -1,55 +1,57 @@
-using FiniteStateMachine;
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// ÓĞÏŞ×´Ì¬»ú»ùÀà
-/// </summary>
-public abstract class FSMController : MonoBehaviour
+namespace DarkFSM
 {
     /// <summary>
-    /// µ±Ç°×´Ì¬
+    /// æœ‰é™çŠ¶æ€æœºåŸºç±»
     /// </summary>
-    protected StateBase state;
-
-    /// <summary>
-    /// ËùÓĞ×´Ì¬
-    /// ×´Ì¬»º´æ
-    /// </summary>
-    private Dictionary<string, StateBase> states = new Dictionary<string, StateBase>();
-
-    /// <summary>
-    /// ¸Ä±ä×´Ì¬
-    /// </summary>
-    /// <param name="stateType">×´Ì¬ÀàĞÍ</param>
-    /// <param name="reset">ÊÇ·ñÖØÖÃ</param>
-    public void ChangeState(Enum stateType, bool reset = false)
+    public abstract class FSMController : MonoBehaviour
     {
-        if (state != null && state.StateType.Equals(stateType) && !reset) return;
-        if (state != null) state.OnExit();
-        state = GetState(stateType);
-        state.OnEnter();
-    }
+        /// <summary>
+        /// å½“å‰çŠ¶æ€
+        /// </summary>
+        protected StateBase state;
 
-    /// <summary>
-    /// »ñÈ¡×´Ì¬
-    /// ÓÅÏÈÔÚ×´Ì¬»º´æ³ØÖĞ»ñÈ¡
-    /// </summary>
-    /// <param name="stateType">×´Ì¬ÀàĞÍ</param>
-    /// <returns>×´Ì¬</returns>
-    private StateBase GetState(Enum stateType)
-    {
-        var stateKey = stateType.ToString();
-        if (states.ContainsKey(stateKey)) return states[stateKey];
-        var newState = Activator.CreateInstance(Type.GetType(stateKey)) as StateBase;
-        newState.Init(stateType, this);
-        states.Add(stateKey, newState);
-        return newState;
-    }
+        /// <summary>
+        /// æ‰€æœ‰çŠ¶æ€
+        /// çŠ¶æ€ç¼“å­˜
+        /// </summary>
+        private Dictionary<string, StateBase> states = new Dictionary<string, StateBase>();
 
-    protected virtual void Update()
-    {
-        if (state != null) state.OnUpdate();
+        /// <summary>
+        /// æ”¹å˜çŠ¶æ€
+        /// </summary>
+        /// <param name="stateType">çŠ¶æ€ç±»å‹</param>
+        /// <param name="reset">æ˜¯å¦é‡ç½®</param>
+        public void ChangeState(Enum stateType, bool reset = false)
+        {
+            if (state != null && state.StateType.Equals(stateType) && !reset) return;
+            if (state != null) state.OnExit();
+            state = GetState(stateType);
+            state.OnEnter();
+        }
+
+        /// <summary>
+        /// è·å–çŠ¶æ€
+        /// ä¼˜å…ˆåœ¨çŠ¶æ€ç¼“å­˜æ± ä¸­è·å–
+        /// </summary>
+        /// <param name="stateType">çŠ¶æ€ç±»å‹</param>
+        /// <returns>çŠ¶æ€</returns>
+        private StateBase GetState(Enum stateType)
+        {
+            var stateKey = stateType.ToString();
+            if (states.ContainsKey(stateKey)) return states[stateKey];
+            var newState = Activator.CreateInstance(Type.GetType(stateKey)) as StateBase;
+            newState.Init(stateType, this);
+            states.Add(stateKey, newState);
+            return newState;
+        }
+
+        protected virtual void Update()
+        {
+            if (state != null) state.OnUpdate();
+        }
     }
 }

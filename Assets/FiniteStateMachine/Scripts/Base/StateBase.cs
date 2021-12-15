@@ -1,38 +1,38 @@
-using System;
+ï»¿using System;
 
-namespace FiniteStateMachine
+namespace DarkFSM
 {
     /// <summary>
-    /// ×´Ì¬»ùÀà
+    /// çŠ¶æ€åŸºç±»
     /// </summary>
     public abstract class StateBase
     {
         /// <summary>
-        /// ×´Ì¬ÀàĞÍ
+        /// çŠ¶æ€ç±»å‹
         /// </summary>
         protected Enum stateType;
         public Enum StateType { get => stateType; }
 
         /// <summary>
-        /// ×´Ì¬³õÊ¼»¯
-        /// ½öÔÚÊ×´ÎÊµÀı»¯Ê±µ÷ÓÃ
+        /// çŠ¶æ€åˆå§‹åŒ–
+        /// ä»…åœ¨é¦–æ¬¡å®ä¾‹åŒ–æ—¶è°ƒç”¨
         /// </summary>
-        /// <param name="stateType">×´Ì¬ÀàĞÍ</param>
-        /// <param name="controller">ËùÊô×´Ì¬»ú</param>
+        /// <param name="stateType">çŠ¶æ€ç±»å‹</param>
+        /// <param name="controller">æ‰€å±çŠ¶æ€æœº</param>
         public abstract void Init(Enum stateType, FSMController controller);
 
         /// <summary>
-        /// ½øÈë×´Ì¬
+        /// è¿›å…¥çŠ¶æ€
         /// </summary>
         public abstract void OnEnter();
 
         /// <summary>
-        /// ÍË³ö×´Ì¬
+        /// é€€å‡ºçŠ¶æ€
         /// </summary>
         public abstract void OnExit();
 
         /// <summary>
-        /// ×´Ì¬ÔËĞĞÖĞ
+        /// çŠ¶æ€è¿è¡Œä¸­
         /// </summary>
         public abstract void OnUpdate();
     }

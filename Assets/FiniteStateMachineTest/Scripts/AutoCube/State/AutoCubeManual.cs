@@ -1,11 +1,9 @@
-using FiniteStateMachine;
+锘縰sing DarkFSM;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 自走方块手动模式
+/// 鑷蛋鏂瑰潡鎵嬪姩妯″紡
 /// </summary>
 public class AutoCubeManual : StateBase
 {
@@ -33,7 +31,7 @@ public class AutoCubeManual : StateBase
     }
 
     /// <summary>
-    /// 控制移动
+    /// 鎺у埗绉诲姩
     /// </summary>
     public void Move()
     {

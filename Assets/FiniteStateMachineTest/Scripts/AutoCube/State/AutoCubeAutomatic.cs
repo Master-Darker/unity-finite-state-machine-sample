@@ -1,17 +1,15 @@
-using FiniteStateMachine;
+锘縰sing DarkFSM;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 自走方块自动模式
+/// 鑷蛋鏂瑰潡鑷姩妯″紡
 /// </summary>
 public class AutoCubeAutomatic : StateBase
 {
     private AutoCubeController controller;
-    private int nextIndex; // 下一个巡逻点下标
-    private Vector3 nextPoint; // 下一个巡逻点
+    private int nextIndex; // 涓嬩竴涓贰閫荤偣涓嬫爣
+    private Vector3 nextPoint; // 涓嬩竴涓贰閫荤偣
 
     public override void Init(Enum stateType, FSMController controller)
     {
@@ -36,7 +34,7 @@ public class AutoCubeAutomatic : StateBase
     }
 
     /// <summary>
-    /// 获取下一个巡逻点
+    /// 鑾峰彇涓嬩竴涓贰閫荤偣
     /// </summary>
     private void GetNextPoint()
     {
@@ -44,9 +42,9 @@ public class AutoCubeAutomatic : StateBase
     }
 
     /// <summary>
-    /// 是否到达下一个巡逻点
+    /// 鏄惁鍒拌揪涓嬩竴涓贰閫荤偣
     /// </summary>
-    /// <returns>到达结果</returns>
+    /// <returns>鍒拌揪缁撴灉</returns>
     private bool ArriveNextPoint()
     {
         var distance = Vector3.Distance(controller.transform.position, nextPoint);
@@ -56,7 +54,7 @@ public class AutoCubeAutomatic : StateBase
     }
 
     /// <summary>
-    /// 朝巡逻点移动
+    /// 鏈濆贰閫荤偣绉诲姩
     /// </summary>
     private void MoveTowards()
     {

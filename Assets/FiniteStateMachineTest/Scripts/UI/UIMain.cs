@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// ä¸»ç•Œé¢UI
+/// </summary>
 public class UIMain : MonoBehaviour
 {
-    [Tooltip("×Ô×ß·½¿é¿ØÖÆÆ÷")] [SerializeField] private AutoCubeController controller;
-    [Tooltip("×Ô¶¯°´Å¥")] [SerializeField] private Button buttonAutomatic;
-    [Tooltip("ÊÖ¶¯°´Å¥")] [SerializeField] private Button buttonManual;
+    [Tooltip("è‡ªèµ°æ–¹å—æ§åˆ¶å™¨")] [SerializeField] private AutoCubeController controller;
+    [Tooltip("è‡ªåŠ¨æŒ‰é’®")] [SerializeField] private Button buttonAutomatic;
+    [Tooltip("æ‰‹åŠ¨æŒ‰é’®")] [SerializeField] private Button buttonManual;
 
     private void Start()
     {

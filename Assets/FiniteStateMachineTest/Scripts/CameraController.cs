@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+锘縰sing UnityEngine;
 
-public class TestCameraFollow : MonoBehaviour
+/// <summary>
+/// 鐩告満鎺у埗
+/// </summary>
+public class CameraController : MonoBehaviour
 {
-    [Tooltip("跟随目标")] [SerializeField] private Transform target;
-    [Tooltip("跟随偏移")] [SerializeField] private Vector3 offset;
-    [Tooltip("移动速度")] [SerializeField] private float moveSpeed;
-    [Tooltip("旋转速度")] [SerializeField] private float rotateSpeed;
+    [Tooltip("璺熼殢鐩爣")] [SerializeField] private Transform target;
+    [Tooltip("璺熼殢鍋忕Щ")] [SerializeField] private Vector3 offset;
+    [Tooltip("绉诲姩閫熷害")] [SerializeField] private float moveSpeed;
+    [Tooltip("鏃嬭浆閫熷害")] [SerializeField] private float rotateSpeed;
 
     private Camera mainCamera;
 

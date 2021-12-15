@@ -1,37 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
+ï»¿using DarkFSM;
 using UnityEngine;
 
 /// <summary>
-/// ×Ô×ß·½¿é¿ØÖÆÆ÷
+/// è‡ªèµ°æ–¹å—æ§åˆ¶å™¨
 /// </summary>
 public class AutoCubeController : FSMController
 {
-    [Tooltip("×Ô¶¯Ñ²Âßµã")] [SerializeField] private Vector3[] autoPoints;
-    [Tooltip("×Ô¶¯É²³µ¾àÀë")] [SerializeField] private float autoBreakDistance;
-    [Tooltip("ÒÆ¶¯ËÙ¶È")] [SerializeField] private float moveSpeed;
-    [Tooltip("Ğı×ªËÙ¶È")] [SerializeField] private float rotateSpeed;
+    [Tooltip("è‡ªåŠ¨å·¡é€»ç‚¹")] [SerializeField] private Vector3[] autoPoints;
+    [Tooltip("è‡ªåŠ¨åˆ¹è½¦è·ç¦»")] [SerializeField] private float autoBreakDistance;
+    [Tooltip("ç§»åŠ¨é€Ÿåº¦")] [SerializeField] private float moveSpeed;
+    [Tooltip("æ—‹è½¬é€Ÿåº¦")] [SerializeField] private float rotateSpeed;
 
     /// <summary>
-    /// ×Ô¶¯Ñ²Âßµã
+    /// è‡ªåŠ¨å·¡é€»ç‚¹
     /// </summary>
     public Vector3[] AutoPoints { get => autoPoints; }
     /// <summary>
-    /// ×Ô¶¯É²³µ¾àÀë
+    /// è‡ªåŠ¨åˆ¹è½¦è·ç¦»
     /// </summary>
     public float AutoBreakDistance { get => autoBreakDistance; }
     /// <summary>
-    /// ÒÆ¶¯ËÙ¶È
+    /// ç§»åŠ¨é€Ÿåº¦
     /// </summary>
     public float MoveSpeed { get => moveSpeed; }
     /// <summary>
-    /// Ğı×ªËÙ¶È
+    /// æ—‹è½¬é€Ÿåº¦
     /// </summary>
     public float RotateSpeed { get => rotateSpeed; }
 }
 
 /// <summary>
-/// ×Ô×ß·½¿é×´Ì¬ÀàĞÍ
+/// è‡ªèµ°æ–¹å—çŠ¶æ€ç±»å‹
 /// </summary>
 public enum AutoCubeStateType
 {
