@@ -1,5 +1,5 @@
 # unity-finite-state-machine-sample
-一个简单的有限状态机样例
+一个简单的Unity有限状态机样例
 
 包含两种状态机方案
 * 基于枚举的状态机
